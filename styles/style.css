@@ -261,6 +261,10 @@ main {
   padding: 0;
 }
 
+.original-img {
+  filter: contrast(90%);
+}
+
 .grace__scale {
   filter: grayscale(50%);
 }
