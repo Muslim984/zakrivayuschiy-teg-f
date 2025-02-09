@@ -83,6 +83,15 @@ main {
   line-height: 21px;
 }
 
+@supports (text-stroke: 1px var(black)) or
+  (-webkit-text-stroke: 1px var(black)) {
+  .span__decoration {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(black);
+    text-stroke: 1px var(black);
+  }
+}
+
 .main__img {
   position: relative;
   max-width: 700px;
@@ -234,7 +243,6 @@ main {
 
 .dialog__button {
   background: transparent;
-  border: none;
   border: 2px solid #000;
   text-align: center;
   width: 293px;

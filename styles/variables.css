@@ -4,6 +4,6 @@
   --decoration-family-font: "Press Start 2P", sans-serif;
   --font-weight-large: 700;
   --font-weight-small: 400;
-  --bg-image: url(../images/background.png)
+  --bg-image: url(../images/background.png);
 }
 

@@ -13,6 +13,7 @@
 
 .like-icon.is-liked {
 animation: scale-animation 0.3s 0.1s ease-in 1 alternate;
+fill: #FF0000;
 }
 
 @keyframes scale-animation {
@@ -66,10 +67,6 @@ animation: scale-animation 0.3s 0.1s ease-in 1 alternate;
 }
 
 .like-icon.is-liked.heart {
-  fill: #FF0000;
-}
-
-.like-icon.is-liked {
   fill: #FF0000;
 }
 
