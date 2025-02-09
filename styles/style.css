@@ -83,8 +83,7 @@ main {
   line-height: 21px;
 }
 
-@supports (text-stroke: 1px var(black)) or
-  (-webkit-text-stroke: 1px var(black)) {
+@supports (text-stroke: 1px var(black)) or (-webkit-text-stroke: 1px var(black)) {
   .span__decoration {
     text-shadow: none;
     -webkit-text-stroke: 1px var(black);
@@ -290,7 +289,7 @@ main {
 }
 
 .mix__filter {
-  filter: grayscale(50%) hue-rotate(10deg) saturate(90%) invert(10%) sepia(10%)
+  filter:contrast(90%) grayscale(50%) hue-rotate(10deg) saturate(90%) invert(10%) sepia(10%)
     blur(10%);
 }
 
