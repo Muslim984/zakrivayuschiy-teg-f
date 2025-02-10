@@ -42,11 +42,11 @@
 .header__title {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   margin-bottom: 20px;
-  font-family: var(--decoration-family-font);
+  font-variation-settings: var(--decoration-family-font);
 }
 
 .header__description {
-  font-family: var(--decoration-family-font);
+  font-variation-settings: var(--decoration-family-font);
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   text-transform: uppercase;
 }
@@ -77,7 +77,7 @@ main {
   color: #000;
   /* text-shadow: 2px 2px 2px #fff; */
   font-size: 14px;
-  font-family: var(--decoration-family-font);
+  font-variation-settings: var(--decoration-family-font);
   -webkit-text-stroke: 0.6px white;
   opacity: 50%;
   line-height: 21px;
@@ -168,7 +168,7 @@ main {
 }
 
 .button__text {
-  font-family: var(--decoration-family-font);
+  font-variation-settings: var(--decoration-family-font);
   font-size: 14px;
   line-height: 12.6px;
   display: flex;
@@ -253,7 +253,7 @@ main {
 
 .button__text-dialog {
   font-size: 14px;
-  font-family: var(--decoration-family-font);
+  font-variation-settings: var(--decoration-family-font);
   font-weight: var(--font-weight-small);
   line-height: 21px;
   text-transform: uppercase;
@@ -290,7 +290,7 @@ main {
 
 .mix__filter {
   filter:contrast(90%) grayscale(50%) hue-rotate(10deg) saturate(90%) invert(10%) sepia(10%)
-    blur(10%);
+  blur(10%);
 }
 
 button:focus {
