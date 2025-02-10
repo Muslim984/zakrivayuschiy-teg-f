@@ -289,8 +289,7 @@ main {
 }
 
 .mix__filter {
-  filter:contrast(90%) grayscale(50%) hue-rotate(10deg) saturate(90%) invert(10%) sepia(10%)
-  blur(10%);
+  filter:contrast(200%) grayscale(40%) hue-rotate(10deg) saturate(90%) invert(10%) sepia(10%);
 }
 
 button:focus {
