@@ -21,13 +21,10 @@
   background-image: var(--bg-image);
   background-attachment: fixed;
   background-size: cover;
-  background: repeating-linear-gradient(
-      90deg,
-      #d3d3d3 0 2px,
-      rgb(0 0 0 / 0) 2px 4px
-    ),
-    repeating-linear-gradient(180deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px),
-    linear-gradient(180deg, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
+  background: 
+  repeating-linear-gradient(90deg, #d3d3d3 0 2px, transparent 2px 4px),
+  repeating-linear-gradient(180deg, #d3d3d3 0 2px, transparent 2px 4px),
+  linear-gradient(180deg, #e7e7e7, #1a1a1a);
 }
 
 .header {
@@ -75,12 +72,13 @@ main {
   right: 27px;
   top: 21px;
   color: #000;
-  /* text-shadow: 2px 2px 2px #fff; */
+  text-shadow: 0px 0px 2px #fff;
   font-size: 14px;
   font-family: var(--decoration-family-font);
   -webkit-text-stroke: 0.6px white;
   opacity: 50%;
   line-height: 21px;
+  mix-blend-mode: hard-light;
 }
 
 @supports (text-stroke: 1px var(black)) or (-webkit-text-stroke: 1px var(black)) {
@@ -95,6 +93,8 @@ main {
   position: relative;
   max-width: 700px;
   max-height: 698px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .bus__img {
@@ -133,25 +133,34 @@ main {
 .like-icon {
   background: transparent;
   border: none;
-  padding: 0;
-  width: 36px;
-  height: 39px;
+  width: 39px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
+}
+
+.like-icon:focus {
+  height: 24px;
 }
 
 .card__like-button {
-  background: transparent;
-  border: 2px solid #000;
+  background-color: white;
   width: 130px;
   height: 38px;
+}
+
+.animation-button {
+  background-color: white;
+  border: 2px solid #000;
   transition: box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
+  
 }
 
-.card__like-button::before {
+.animation-button::before { 
   content: "";
   position: absolute;
   top: 0;
@@ -167,6 +176,19 @@ main {
   color: white;
 }
 
+.save__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 335px;
+  min-height: 51px;
+  margin: 0 auto;
+  gap: 8px;
+  margin-bottom: 103px;
+  padding: 15px 18px;
+  background-color: white;
+}
+
 .button__text {
   font-family: var(--decoration-family-font);
   font-size: 14px;
@@ -180,26 +202,14 @@ main {
   z-index: 200;
 }
 
-.save__button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 335px;
-  min-height: 51px;
-  background: transparent;
-  margin: 0 auto;
-  gap: 8px;
-  margin-bottom: 103px;
-  padding: 15px 18px;
-  background-color: white;
-}
+
 
 .dialog .floppy-image {
-  width: 90px !important;
+  width: 90px;
   mix-blend-mode: normal;
 }
 
-.overlay {
+/* .overlay {
   position: fixed;
   overflow: hidden;
   display: flex;
@@ -208,11 +218,10 @@ main {
   background-color: rgba(0, 0, 0, 0.75);
   height: 100vh;
   width: 100%;
-}
+} */
 
 .dialog[open] {
   position: fixed;
-  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -225,7 +234,6 @@ main {
   z-index: 1000;
   background-color: white;
   width: 357px;
-  height: 193px;
   padding: 30px;
 }
 
@@ -299,13 +307,12 @@ button:focus {
 .button:focus-visible {
   box-shadow: 2px 2px 0 0 black;
 }
-
-.card__like-button:hover::before {
-  transform: translateX(0);
+.button__text:hover {
   color: white;
 }
 
-.button__text:hover {
+.animation-button:hover::before {
+  transform: translateX(0);
   color: white;
 }
 
@@ -323,7 +330,7 @@ button:focus {
   }
   .header {
     width: 100%;
-    height: 327px;
+    max-height: 327px;
     padding-top: 120px;
     padding: 120px 0;
   }
