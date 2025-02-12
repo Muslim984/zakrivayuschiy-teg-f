@@ -21,13 +21,7 @@
   background-image: var(--bg-image);
   background-attachment: fixed;
   background-size: cover;
-  background: repeating-linear-gradient(
-      90deg,
-      #d3d3d3 0 2px,
-      transparent 2px 4px
-    ),
-    repeating-linear-gradient(180deg, #d3d3d3 0 2px, transparent 2px 4px),
-    linear-gradient(180deg, #e7e7e7, #1a1a1a);
+  background: var(--bg-gradient);
 }
 
 .header {
@@ -78,17 +72,16 @@ main {
   text-shadow: 0px 0px 2px #fff;
   font-size: 14px;
   font-family: var(--decoration-family-font);
-  -webkit-text-stroke: 0.6px white;
   opacity: 50%;
   line-height: 21px;
   mix-blend-mode: hard-light;
 }
 
-@supports (text-stroke: 1px var(black)) or (-webkit-text-stroke: 1px var(black)) {
-  .span__decoration {
+@supports (text-stroke: #fff) or (-webkit-text-stroke: 1px #fff) {
+  .span__decoration{
     text-shadow: none;
-    -webkit-text-stroke: 1px var(black);
-    text-stroke: 1px var(black);
+    -webkit-text-stroke: 1px #fff;
+    text-stroke: #fff;
   }
 }
 
@@ -120,9 +113,6 @@ main {
 
 .main__subtext {
   margin-top: 27px;
-  font-size: 18px;
-  line-height: 21px;
-  max-width: 646px;
 }
 
 .main__button {
@@ -133,19 +123,28 @@ main {
   margin-top: 25px;
 }
 
-.like-icon {
+.card-container__icon-button {
+  padding: 0;
+  width: 39px;
+  height: 34px;
   background: transparent;
   border: none;
-  width: 39px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
+  cursor: pointer;
+  outline: 2px solid transparent;
+  transition: outline 0.3sease;
+}
+
+.like-icon {
+  transform-origin: center;
+  width: inherit;
+  height: inherit;
+  fill: black;
+  position: relative;
+  z-index: 1;
 }
 
 .like-icon:focus {
-  height: 24px;
+
 }
 
 .card__like-button {
@@ -171,11 +170,10 @@ main {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: #000;
+  background-color: #000000;
   transform: translateX(-100%);
   transition: transform 0.5s ease-in-out;
   z-index: 100;
-  color: white;
 }
 
 .save__button {
@@ -192,42 +190,43 @@ main {
 }
 
 .button__text {
+  color: white;
   font-family: var(--decoration-family-font);
   font-size: 14px;
   line-height: 12.6px;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
   position: relative;
   z-index: 200;
+  mix-blend-mode: difference;
+
 }
 
-.dialog .floppy-image {
-  width: 90px;
-  mix-blend-mode: normal;
-}
-
-/* .overlay {
+.dialog {
   position: fixed;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.75);
-  height: 100vh;
-  width: 100%;
-} */
+  inset: 0;
+}
+.floppy-image {
+  position: relative;
+  z-index: 1000;
+  color: white;
+  mix-blend-mode: difference;
+}
+ 
+.dialog .floppy-image {
+  width: 91px;
+  height: 40px;
+}
 
 .dialog[open] {
-  position: fixed;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.75);
-  height: 100vh;
-  width: 100%;
+  margin-inline: auto;
+  margin-block: auto;
+}
+
+.dialog::backdrop {
+  opacity: 0.75;
+  background-color: black;
 }
 
 .dialog__container {
@@ -242,10 +241,6 @@ main {
   display: flex;
   align-items: center;
   justify-self: center;
-}
-
-.dialog::backdrop {
-  opacity: 0.75;
 }
 
 .dialog__button {
@@ -306,16 +301,28 @@ button:focus {
 }
 
 .button:focus-visible {
-  box-shadow: 2px 2px 0 0 black;
+  box-shadow: 2px 2px 0px 0px black;
 }
 .button__text:hover {
-  color: white;
+  mix-blend-mode: difference;
 }
 
 .animation-button:hover::before {
   transform: translateX(0);
-  color: white;
 }
+
+.card-container__icon-button:focus {
+  outline: none;
+}
+
+
+.card-container__icon-button:focus {
+  outline: none;
+}
+
+.card-container__icon-button:focus-visible {
+  outline: 2px solid black;
+} 
 
 @media (width <= 701px) {
   .header {
@@ -329,9 +336,14 @@ button:focus {
     max-width: 375px;
     gap: 46px;
   }
+
+  .span__decoration {
+    right: 11px;
+    top: 18px;
+  }
+  
   .header {
     width: 100%;
-    max-height: 327px;
     padding-top: 120px;
     padding: 120px 0;
   }
@@ -363,5 +375,8 @@ button:focus {
 
   .main__description-item {
     max-width: 310px;
+  }
+  .dialog {
+    overflow-x: hidden;
   }
 }

@@ -10,10 +10,9 @@
 
 */
 
-
-.like-icon.is-liked {
-animation: scale-animation 0.3s 0.1s ease-in 1 alternate;
-fill: #FF0000;
+.like-icon .is-liked {
+  animation: scale-animation 0.3s 0.1s ease-in 1 alternate;
+  fill: #ff0000;
 }
 
 @keyframes scale-animation {
@@ -54,12 +53,12 @@ fill: #FF0000;
 
 .like-icon:active .core-icon {
   transition: fill 0.3s linear;
-  fill: #FF0000;
+  fill: #ff0000;
 }
 
 .like-icon.is-liked .core-icon {
   transition: fill 0.3s linear;
-  fill: #FF0000;
+  fill: #ff0000;
 }
 
 .like-icon.is-liked .sparks-icon {
@@ -67,7 +66,7 @@ fill: #FF0000;
 }
 
 .like-icon.is-liked.heart {
-  fill: #FF0000;
+  fill: #ff0000;
 }
 
 .like-icon.contour-like {
@@ -86,7 +85,7 @@ fill: #FF0000;
 }
 
 .like-icon.is-liked .main-body-icon {
-  fill: #FF0000;
+  fill: #ff0000;
   transition-delay: fill 0.3s 0.05s linear;
 }
 
@@ -95,14 +94,11 @@ fill: #FF0000;
 }
 
 .like-icon:active .main-body-icon {
-  fill: #FF0000;
+  fill: #ff0000;
   transition: fill 0.3s 0.05s linear;
 }
 
 .like-icon.is-liked .contour-like {
-  fill: #FF0000;
-  transition: fill 0.3s linear;
+  fill: #ff0000;
+  transition: fill 0.06s linear;
 }
-
-
-  
