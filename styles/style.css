@@ -18,10 +18,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: var(--bg-image);
-  background-attachment: fixed;
-  background-size: cover;
   background: var(--bg-gradient);
+  background-attachment: fixed;
+  background-image: var(--bg-image);
+  background-size: cover;
 }
 
 .header {
@@ -109,6 +109,8 @@ main {
   line-height: 21px;
   font-size: 18px;
   max-width: 646px;
+  font-variation-settings: "wght" var(--font-weight-small, 400);
+  font-family: var(--main-family-font);
 }
 
 .main__subtext {
@@ -131,7 +133,7 @@ main {
   border: none;
   cursor: pointer;
   outline: 2px solid transparent;
-  transition: outline 0.3sease;
+  transition: outline 0.3s ease;
 }
 
 .like-icon {
@@ -198,6 +200,10 @@ main {
 .dialog {
   position: fixed;
   inset: 0;
+  font-size: 14px;
+  padding: 30px 26px;
+  max-width: 357px;
+  
 }
 .floppy-image {
   position: relative;
@@ -212,11 +218,8 @@ main {
 }
 
 .dialog[open] {
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-inline: auto;
-  margin-block: auto;
+
 }
 
 .dialog::backdrop {
@@ -225,17 +228,15 @@ main {
 }
 
 .dialog__container {
-  z-index: 1000;
-  background-color: white;
-  width: 357px;
-  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .dialog__container-text {
   gap: 20px;
   display: flex;
   align-items: center;
-  justify-self: center;
 }
 
 .dialog__button {
@@ -298,9 +299,14 @@ button:focus {
 .button:focus-visible {
   box-shadow: 2px 2px 0px 0px black;
 }
-.button__text:hover {
-  mix-blend-mode: difference;
+
+.like-icon:focus-visible {
+  box-shadow: none;
 }
+
+/* .button__text:hover {
+  mix-blend-mode: difference;
+} */
 
 .animation-button:hover::before {
   transform: translateX(0);
@@ -366,7 +372,18 @@ button:focus {
   .main__description-item {
     max-width: 310px;
   }
-  .dialog {
-    overflow-x: hidden;
+  .dialog__container-text {
+    padding-left: 13px;
   }
+  
+  .dialog {
+    max-width: 341px;
+  }
+
+  .dialog__button {
+width: 257px;
+  }
+
+
+  /* .dialog__button */
 }

@@ -100,5 +100,5 @@
 
 .like-icon.is-liked .contour-like {
   fill: #ff0000;
-  transition: fill 0.06s linear;
-}
+  transition: fill 0.3s 0.06s linear;
+} 
