@@ -3,7 +3,7 @@
   --main-family-font: "Inter", sans-serif;
   --decoration-family-font: "Press Start 2P", sans-serif;
   --font-weight-large: 700;
-  --font-weight-small: "wght" 400;
+  --font-weight-small: 400;
   /* --bg-image: url(../images/background.png); */
   --bg-gradient: repeating-linear-gradient(
       90deg,

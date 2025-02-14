@@ -108,7 +108,7 @@ main {
   line-height: 21px;
   font-size: 18px;
   max-width: 646px;
-  font-variation-settings: var(--font-weight-small, 400);
+  font-variation-settings: "wght" var(--font-weight-small, 400);
   font-family: var(--main-family-font);
 }
 
